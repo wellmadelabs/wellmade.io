@@ -26,8 +26,10 @@
     "@reach/visually-hidden": "^0.1.1",
     "@rebass/grid": "^6.0.0-7",
     "babel-plugin-styled-components": "^1.10.0",
+    "formik": "^1.5.8",
     "gatsby": "^2.2.4",
     "gatsby-image": "^2.0.34",
+    "gatsby-plugin-emotion": "^4.1.2",
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.10",
     "gatsby-plugin-react-svg": "^2.0.0",
@@ -46,7 +48,8 @@
     "react-helmet": "^5.2.0",
     "react-pose": "^4.0.5",
     "styled-components": "^4.1.3",
-    "typeface-righteous": "0.0.72"
+    "typeface-righteous": "0.0.72",
+    "yup": "^0.27.0"
   },
   "devDependencies": {
     "ava": "^0.25.0",

@@ -10,21 +10,19 @@ import Head from 'components/head';
 import Layout from 'components/layout';
 
 import HeroSection from 'components/hero';
-
+import LeadForm from 'components/lead-submit-form';
 import { mq } from 'styles/breakpoints';
 
 let textWrapper = css`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   color: white;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.45);
+  margin: 0 auto;
   padding: 3rem;
 `;
 
-let h1Styling = css`
+let logoStyling = css`
   font-family: 'Righteous';
-  font-size: 5rem;
+  font-size: 3rem;
   -webkit-text-stroke: 1px white;
   color: #e87e0d;
   margin-bottom: 2rem;
@@ -33,6 +31,13 @@ let h1Styling = css`
     font-size: 12rem;
     -webkit-text-stroke: 2px white;
   }
+`;
+
+let h1Styling = css`
+  color: white;
+  font-size: 3.5rem;
+  -webkit-text-stroke: 0.75px white;
+  margin-bottom: 3rem;
 `;
 
 let h2Styling = css`
@@ -44,14 +49,32 @@ let h2Styling = css`
   }
 `;
 
+let pStyling = css`
+
+`;
+
 const Index = () => (
   <Layout>
     <Head siteTitle="WellMade" siteDescription="Driving profitable growth" />
     <HeroSection>
-    <Box css={textWrapper} width={0.8} m="auto">
-      <h1 css={h1Styling}>wellmade</h1>
-      <h2 css={h2Styling}>Driving profitable growth through digital innovation</h2>
-    </Box>
+    <Box css={textWrapper} width={1}>
+      <div css={logoStyling}>wellmade</div>
+      <h1 css={h1Styling}>Discover Strategies to Grow Your Fitness Brand</h1>
+      <h2 css={h2Styling}>Calculate the north star of your fitness studio in moments</h2>
+
+      <LeadForm
+        apiUrl="http://localhost:9000"
+        setSubmitTrue={() => true}
+      />
+
+       <p>Knowing one number, your Customer Lifetime Value (CLV), is your first step to fundamentally change your growth and retention marketing efforts:</p>
+      <ul>
+        <li>Discover how much you can expect each new customer to spend</li>
+        <li>Understand how much to spend on customer acquisition and retention efforts</li>
+        <li>Make profit the #1 success metric for new marketing campaigns</li>
+      </ul>
+      <p>Calculating CLV in Mindbody Online (MBO) is hard. We’ve put in the sweat to make it easy for you.</p>
+   </Box>
     </HeroSection>
   </Layout>
 );
