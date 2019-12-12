@@ -33,13 +33,9 @@ let textWrapper = css`
 
 let h2Styling = css`
   color: #feeccb;
-  font-size: 1.5rem;
+  font-size: 1.15rem;
   margin-top: 2rem;
   ${fontFamily.poppins};
-
-  ${mq.tablet} {
-    font-size: 1.5rem;
-  }
 `;
 
 const Index = () => (
