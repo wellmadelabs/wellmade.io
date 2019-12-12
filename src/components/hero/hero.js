@@ -15,25 +15,9 @@ let heroWrapper = css`
   min-height: 100vh;
 `;
 
-let heroImg = css`
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
-`;
-
-const HeroSection = ({ data, children }) => (
+const HeroSection = ({ children }) => (
   <div css={heroWrapper}>
-    <Img
-      css={heroImg}
-      style={{ position: 'absolute' }}
-      fluid={data.background.childImageSharp.fluid}
-    />
-    {children}
+   {children}
   </div>
 );
 
@@ -59,12 +43,5 @@ export default props => (
 );
 
 HeroSection.propTypes = {
-  data: PropTypes.shape({
-    background: PropTypes.shape({
-      childImageSharp: PropTypes.shape({
-        fluid: PropTypes.object.isRequired,
-      }).isRequired,
-    }).isRequired,
-  }).isRequired,
   children: PropTypes.node,
 };

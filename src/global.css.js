@@ -38,7 +38,7 @@ export default createGlobalStyle`
     line-height: 1;
     font-size: 1.6rem;
     color: #000;
-    background-color: #fff;
+    background-color: #0e207d;
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -46,6 +46,7 @@ export default createGlobalStyle`
     -webkit-font-feature-settings: "pnum";
     font-feature-settings: "pnum";
     font-variant-numeric: proportional-nums;
+
   }
 
   ol, ul {
