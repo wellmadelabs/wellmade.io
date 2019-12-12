@@ -1,4 +1,4 @@
- /** @jsx jsx */
+/** @jsx jsx */
 /* eslint-disable */
 
 import { css, jsx } from '@emotion/core';
@@ -13,6 +13,7 @@ import HeroSection from 'components/hero';
 import Logo from 'components/logo';
 
 import { mq } from 'styles/breakpoints';
+import { fontFamily } from 'styles/text.css';
 
 let layoutWrapper = css`
   background-color: #0e207d;
@@ -34,6 +35,7 @@ let h2Styling = css`
   color: #feeccb;
   font-size: 1.5rem;
   margin-top: 2rem;
+  ${fontFamily.poppins};
 
   ${mq.tablet} {
     font-size: 1.5rem;
