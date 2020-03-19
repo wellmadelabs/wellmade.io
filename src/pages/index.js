@@ -5,6 +5,7 @@ import { css, jsx } from '@emotion/core';
 
 import React from 'react';
 import { Box } from '@rebass/grid';
+import { Link } from 'gatsby';
 
 import Head from 'components/head';
 import Layout from 'components/layout';
@@ -38,18 +39,39 @@ let h2Styling = css`
   ${fontFamily.poppins};
 `;
 
-const Index = () => (
-  <Layout css={layoutWrapper}>
-    <Head siteTitle="Wellmade" siteDescription="Driving profitable growth" />
-    <HeroSection>
-    <Box css={textWrapper} width={0.8} m="auto">
-      <Logo />
-      <h2 css={h2Styling}>Digital Consultancy | Innovation Lab</h2>
-    </Box>
-    </HeroSection>
-  </Layout>
-);
+const Index = ({ data }) => {
+  const posts = data.wpgraphql.posts.edges.map(edge => edge.node);
+  console.log(posts)
+  return (
+    <Layout css={layoutWrapper}>
+      <Head siteTitle="Wellmade" siteDescription="Driving profitable growth" />
+      <HeroSection>
+      <Box css={textWrapper} width={0.8} m="auto">
+        <Logo />
+        <h2 css={h2Styling}>Digital Consultancy | Innovation Lab</h2>
+      </Box>
+      </HeroSection>
+      {posts.map(post => (
+        <Link to={post.slug} key={post.slug}>{post.title}</Link>
+      ))}
+    </Layout>
+)};
 
 Index.propTypes = {};
 
 export default Index;
+
+export const query = graphql`
+  query homePosts {
+    wpgraphql {
+      posts {
+        edges {
+          node {
+            slug
+            title
+          }
+        }
+      }
+    }
+  }
+`
